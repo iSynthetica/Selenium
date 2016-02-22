@@ -81,7 +81,12 @@
                             <div class="col-sm-3">
                                 <div class="form-group">
                                     <label for="customer_birth">Дата рождения</label>
-                                    <input type="email" class="form-control form-sngl-datepicker" id="customer_birth" name="customer_birth" placeholder="Дата рождения">
+                                    <div class="input-group">
+                                        <input type="email" class="form-control form-sngl-datepicker" id="customer_birth" name="customer_birth" placeholder="Дата рождения">
+                                        <span class="input-group-addon" id="basic-addon2">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -113,20 +118,34 @@
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
-                                    <label for="customer_surname">Фамилия</label>
-                                    <input type="text" class="form-control" id="customer_surname" name="customer_surname" placeholder="Фамилия">
+                                    <label for="customer_purpose">Цель визита</label>
+                                    <select name="customer_purpose" id="customer_purpose" class="form-control">
+                                        <option value="-1">-Будь ласка, оберіть-</option>
+                                        <option value="1">Подача документів</option>
+                                        <option value="2">Консультація</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
                                     <label for="customer_email">Email</label>
-                                    <input type="email" class="form-control" id="customer_email" name="customer_email" placeholder="Email">
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" id="customer_email" name="customer_email" placeholder="Email">
+                                        <span class="input-group-addon" id="basic-addon2">
+                                            <i class="fa fa-envelope-o"></i>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
                                     <label for="customer_pass">Пароль</label>
-                                    <input type="text" class="form-control" id="customer_pass" name="customer_email" placeholder="Пароль">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="customer_pass" name="customer_email" placeholder="Пароль">
+                                        <span class="input-group-addon" id="basic-addon2">
+                                            <i class="fa fa-unlock-alt"></i>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
