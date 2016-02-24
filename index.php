@@ -1,92 +1,173 @@
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Scrolling Nav - Start Bootstrap Template</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+<?php
+require_once "header.php";
+?>
+<section class="section-xl bg-light">
+    <div class="container">
+        <div class="row section-header">
+            <div class="col-sm-12 text-center">
+                <h1>Начало работы</h1>
+                <h2 class="sub-header">для запуска работы программы заполните все поля в форме</h2>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a class="page-scroll" href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
-    </nav>
 
-    <!-- Intro Section -->
-    <section id="intro" class="intro-section" style="padding-top: 51px">
-        <div class="container">
-            <div class="row">
+        <div class="row section-content">
+            <form action="">
                 <div class="col-sm-12">
-                    <h1 class="text-center">Введите исходные данные</h1>
-                    <h3>Для начала работы с программой введите исходные данные в форму. Все поля формы обязательны для заполнения.</h3>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="customer_name">Имя</label>
+                                <input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="Имя">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="customer_surname">Фамилия</label>
+                                <input type="text" class="form-control" id="customer_surname" name="customer_surname" placeholder="Фамилия">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="customer_status">Статус</label>
+                                <select name="customer_status" id="customer_status" class="form-control">
+                                    <option value="-1">...выбрать...</option>
+                                    <option value="Dr.">Dr.</option>
+                                    <option value="Mr.">Mr.</option>
+                                    <option value="Mrs.">Mrs.</option>
+                                    <option value="Ms.">Ms.</option>
+                                    <option value="Mstr.">Mstr.</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="customer_birth">Дата рождения</label>
+                                <div class="input-group">
+                                    <input type="email" class="form-control form-sngl-datepicker" id="customer_birth" name="customer_birth" placeholder="Дата рождения">
+                                    <span class="input-group-addon" id="basic-addon2">
+                                        <i class="fa fa-calendar"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="customer_ppva">ППВА</label>
+                                <select name="customer_ppva" id="customer_ppva" class="form-control">
+                                    <option value="-1">-Оберіть ППВА-</option>
+                                    <option value="5">Польщі Івано-Франківськ</option>
+                                    <option value="7">Польщі Львів</option>
+                                    <option value="8">Польщі Тернопіль</option>
+                                    <option value="9">Польщі Рівне</option>
+                                    <option value="10">Польщі Луцьк</option>
+                                    <option value="11">Польщі Дніпропетровськ</option>
+                                    <option value="12">Польщі Харків</option>
+                                    <option value="13">Польщі Київ</option>
+                                    <option value="14">Польщі Одеса</option>
+                                    <option value="15">Польщі Хмельницький</option>
+                                    <option value="16">Польщі Житомир</option>
+                                    <option value="17">Польщі Вінниця</option>
+                                    <option value="19">Польщі Донецьк</option>
+                                    <option value="20">Польщі Ужгород</option>
+                                    <option value="21">Польщі Чернівці</option>
+                                    <option value="22">Польщі Луганськ</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="customer_purpose">Цель визита</label>
+                                <select name="customer_purpose" id="customer_purpose" class="form-control">
+                                    <option value="-1">-Будь ласка, оберіть-</option>
+                                    <option value="1">Подача документів</option>
+                                    <option value="2">Консультація</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="customer_email">Email</label>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" id="customer_email" name="customer_email" placeholder="Email">
+                                    <span class="input-group-addon" id="basic-addon2">
+                                        <i class="fa fa-envelope-o"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="customer_pass">Пароль</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="customer_pass" name="customer_email" placeholder="Пароль">
+                                    <span class="input-group-addon" id="basic-addon2">
+                                        <i class="fa fa-unlock-alt"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="customer_ptn">PTN</label>
+                                <input type="text" class="form-control" id="customer_ptn" name="customer_ptn" placeholder="PTN">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="customer_ppva">ППВА</label>
+                                <select name="customer_ppva" id="customer_ppva" class="form-control">
+                                    <option value="-1">-Оберіть ППВА-</option>
+                                    <option value="5">Польщі Івано-Франківськ</option>
+                                    <option value="7">Польщі Львів</option>
+                                    <option value="8">Польщі Тернопіль</option>
+                                    <option value="9">Польщі Рівне</option>
+                                    <option value="10">Польщі Луцьк</option>
+                                    <option value="11">Польщі Дніпропетровськ</option>
+                                    <option value="12">Польщі Харків</option>
+                                    <option value="13">Польщі Київ</option>
+                                    <option value="14">Польщі Одеса</option>
+                                    <option value="15">Польщі Хмельницький</option>
+                                    <option value="16">Польщі Житомир</option>
+                                    <option value="17">Польщі Вінниця</option>
+                                    <option value="19">Польщі Донецьк</option>
+                                    <option value="20">Польщі Ужгород</option>
+                                    <option value="21">Польщі Чернівці</option>
+                                    <option value="22">Польщі Луганськ</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="customer_email">Email</label>
+                                <input type="email" class="form-control" id="customer_email" name="customer_email" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="customer_email">Email</label>
+                                <input type="email" class="form-control" id="customer_email" name="customer_email" placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <div class="form-group" style="padding-top: 25px">
+                             <button type="submit" class="btn btn-block btn-lg btn-success"><i class="glyphicon glyphicon-play"></i> Начать</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-12">
-                    <a class="btn btn-default page-scroll" href="start.php">Click Me to Start with Poland</a>
-                </div>
-            </div>
+            </form>
         </div>
-    </section>
-
-    <!-- jQuery -->
-    <script src="assets/js/jquery-1.12.0.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="assets/js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
-
+    </div>
+</section>
+<?php
+require_once "footer.php";
+?>
