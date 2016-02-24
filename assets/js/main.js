@@ -13,7 +13,7 @@
 //        timecirclesInit();
 //        finalCowntdownInit();
 //        init_number_input();
-//        init_input_mask();
+        init_input_mask();
 //        init_country_select();
 //        init_form_validation();
 //        init_scrolly();
@@ -152,6 +152,11 @@
     function init_input_mask() {
         $('.form-mask-phone').inputmask({
                 mask: '+380 (99) 999-99-99'
+            }
+        );
+
+        $('.form-mask-ptn').inputmask({
+                mask: '9999/9999/9999'
             }
         );
 
