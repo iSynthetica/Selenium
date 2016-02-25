@@ -1,3 +1,6 @@
+<?php
+require_once('inc/db.php');
+?>
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
