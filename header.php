@@ -1,5 +1,7 @@
 <?php
+session_start();
 require_once('inc/db.php');
+require_once('inc/library.php');
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -38,6 +40,62 @@ require_once('inc/db.php');
 
 <body>
 <div id="content_wrapper">
+    <!-- Main navigation menu - Start -->
+    <nav role="navigation" class="navbar navbar-default" id="block-main-nav">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button data-target=".navbar-ex1-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav" id="menu-header-menu">
+                        <li class="menu-item current-menu-item active">
+                            <a href="index.php" title="Перейти на главную страницу">
+                                <i class="fa fa-home" style="margin-right: 5px"></i>Главная
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="add_new.php" title="Добавить нового клиента">
+                                <i class="fa fa-user-plus" style="margin-right: 5px"></i>Новый клиент
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="start.php" title="Начать запись для подачи документов">
+                                <i class="fa fa-play" style="margin-right: 5px"></i>Начать запись
+                            </a>
+                        </li>
+                        <li class="menu-item dropdown">
+                            <a aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" title="Features">
+                                Features <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="menu-item">
+                                    <a href="forms.html" title="Forms">Forms</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="colors.html" title="Colors">Colors</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="countdowns.html" title="Countdowns">Countdowns</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" title="Фотогалерея">Фотогалерея</a>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </nav>
+    <!-- Main navigation menu - End -->
+
     <header id="header" class="section-xl bg-light parallax bg-holder txt-light">
         <div class="bg-parallax" style="background-image:url('/assets/img/poland.jpg')"></div>
         <div class="overlay bg-black bg-op-20"></div>

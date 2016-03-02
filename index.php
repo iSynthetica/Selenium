@@ -1,5 +1,37 @@
 <?php
 require_once "header.php";
+
+//var_dump($db);
+
+if ($result = $db->query('SELECT * FROM pol_state')){
+    if ($result->num_rows) {
+        while($row = $result->fetch_assoc()) {
+            //echo $row['status'] . ", ";
+        }
+    } else {
+        // TODO: Make nothing find
+    }
+} else {
+    // TODO: Make error page
+}
+?>
+
+<?php
+if (isset($_SESSION['notification'])) {
+    ?>
+    <section class="section-xl bg-light">
+        <div class="row section-header">
+            <div class="col-sm-12 text-center">
+                <h1>Сообщение</h1>
+            </div>
+        </div>
+        <div class="row section-content">
+            <?= $_SESSION['notification'] ?>
+        </div>
+    </section>
+    <?php
+    unset ($_SESSION['notification']);
+}
 ?>
 <section class="section-xl bg-light">
     <div class="container">

@@ -6,10 +6,6 @@ $db_password = "qybbc7ba";
 
 $db = new mysqli($db_host, $db_login, $db_password, $db_name);
 if($db->connect_errno) {
-    // TODO: Make error page
+    echo "DB error \n";
 }
-//var_dump($db);
-
-$result = $db->query('SELECT * FROM `pol_state`');
-
-var_dump($result);
+$db->set_charset('utf8');
