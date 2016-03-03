@@ -289,8 +289,8 @@ require_once "header.php";
                                                     <option value="215">TURKMENISTAN</option>
                                                     <option value="217">TUVALU</option>
                                                     <option value="218">UGANDA</option>
-                                                    <option value="219">UKRAINE</option>
-                                                    <option value="216" selected="selected">Ukrainians</option>
+                                                    <option value="219" selected="selected">UKRAINE</option>
+                                                    <option value="216">Ukrainians</option>
                                                     <option value="220">UN NATION</option>
                                                     <option value="221">UN OFFICIAL</option>
                                                     <option value="222">UNITED ARAB EMIRATES</option>
