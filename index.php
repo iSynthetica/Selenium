@@ -3,7 +3,10 @@ require_once "header.php";
 
 //var_dump($db);
 
-$result = $db->query('SELECT * FROM pol_clients');
+$query = "SELECT c.*, s.state FROM pol_clients AS c "
+        ."JOIN pol_state AS s ON c.state_id = s.id";
+
+$result = $db->query($query);
 ?>
 
 <?php
@@ -48,6 +51,7 @@ if (isset($_SESSION['notification'])) {
                                     <th>Фамилия</th>
                                     <th>PTN</th>
                                     <th>Состояние заявки</th>
+                                    <th>Упраление</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,7 +63,18 @@ if (isset($_SESSION['notification'])) {
                                         <td><?= $row['name'] ?></td>
                                         <td><?= $row['surname'] ?></td>
                                         <td><?= $row['ptn'] ?></td>
-                                        <td><?= get_client_state($row['state_id']) ?></td>
+                                        <td><?= $row['state'] ?></td>
+                                        <td style="width: 190px">
+                                            <a class="btn btn-info btn-sm" href="#" role="button" title="Подробная информация о клиенте">
+                                                <i class="fa fa-user-secret"></i> Подробнее
+                                            </a>
+                                            <a class="btn btn-warning btn-sm" href="#" role="button" title="Редактировать информацию о клиенте">
+                                                <i class="fa fa-pencil"></i>
+                                            </a>
+                                            <a class="btn btn-danger btn-sm" href="#" role="button" title="Удалить запись клиента">
+                                                <i class="fa fa-remove"></i>
+                                            </a>
+                                        </td>
                                     </tr>
                                     <?php
                                 }
