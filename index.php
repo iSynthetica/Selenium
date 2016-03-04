@@ -8,28 +8,13 @@ $query = "SELECT c.*, s.state FROM pol_clients AS c "
 
 $result = $db->query($query);
 ?>
-
-<?php
-if (isset($_SESSION['notification'])) {
-    ?>
-    <section class="section-xl bg-light">
-        <div class="container">
-            <div class="row section-header">
-                <div class="col-sm-12 text-center">
-                    <h1>Сообщение</h1>
-                </div>
-            </div>
-            <div class="row section-content">
-                <?= $_SESSION['notification'] ?>
-            </div>
-        </div>
-    </section>
-    <?php
-    unset ($_SESSION['notification']);
-}
-?>
-<section class="section-xl bg-light">
+<section class="section-lg bg-light">
     <div class="container">
+
+        <?php
+        display_notification();
+        ?>
+
         <div class="row section-header">
             <div class="col-sm-12 text-center">
                 <h1>Список клиентов</h1>
@@ -65,13 +50,13 @@ if (isset($_SESSION['notification'])) {
                                         <td><?= $row['ptn'] ?></td>
                                         <td><?= $row['state'] ?></td>
                                         <td style="width: 190px">
-                                            <a class="btn btn-info btn-sm" href="#" role="button" title="Подробная информация о клиенте">
+                                            <a class="btn btn-info btn-sm" href="info.php?id=<?= $row['id'] ?>" role="button" title="Подробная информация о клиенте">
                                                 <i class="fa fa-user-secret"></i> Подробнее
                                             </a>
-                                            <a class="btn btn-warning btn-sm" href="#" role="button" title="Редактировать информацию о клиенте">
+                                            <a class="btn btn-warning btn-sm" href="edit.php?id=<?= $row['id'] ?>" role="button" title="Редактировать информацию о клиенте">
                                                 <i class="fa fa-pencil"></i>
                                             </a>
-                                            <a class="btn btn-danger btn-sm" href="#" role="button" title="Удалить запись клиента">
+                                            <a class="btn btn-danger btn-sm" href="remove.php?id=<?= $row['id'] ?>" role="button" title="Удалить запись клиента">
                                                 <i class="fa fa-remove"></i>
                                             </a>
                                         </td>

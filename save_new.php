@@ -42,15 +42,14 @@ if ($_POST) {
     $query = "INSERT INTO pol_clients (" . $fields . ") VALUES (" . $values . ");";
 
     if ($result = $db->query($query)){
-        $_SESSION['notification'] = '<span class="txt-red h2">Не удалось записать нового клиента в базу данных</span>';
+        $_SESSION['notification']['status'] = 'success';
+        $_SESSION['notification']['title'] = 'Поздравляю: ';
+        $_SESSION['notification']['message'] = 'Новый клиент добавлен успешно';
     } else {
-        $_SESSION['notification'] = '<span class="txt-green h2">Новый клиент добавлен успешно</span>';
+        $_SESSION['notification']['status'] = 'danger';
+        $_SESSION['notification']['status'] = 'Ошибка: ';
+        $_SESSION['notification']['message'] = 'Не удалось записать нового клиента в базу данных';
     }
-    //echo get_base_url();
 
     header('Location: http://' . get_base_url());
-    //echo $query;
-    //die;
-
-    //var_dump($client_data);
 }

@@ -96,7 +96,7 @@ require_once('inc/library.php');
     </nav>
     <!-- Main navigation menu - End -->
 
-    <header id="header" class="section-xl bg-light parallax bg-holder txt-light">
+    <header id="header" class="section-lg bg-light parallax bg-holder txt-light">
         <div class="bg-parallax" style="background-image:url('/assets/img/poland.jpg')"></div>
         <div class="overlay bg-black bg-op-20"></div>
         <div class="container">
