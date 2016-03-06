@@ -1,4 +1,5 @@
 <?php
+require_once "inc/initial.php";
 require_once "header.php";
 
 //var_dump($db);
@@ -18,7 +19,7 @@ $result = $db->query($query);
         <div class="row section-header">
             <div class="col-sm-12 text-center">
                 <h1>Список клиентов</h1>
-                <h2 class="sub-header">для запуска работы программы заполните все поля в форме</h2>
+                <h2 class="sub-header">список клиентов для подачи документов в консульство Польши</h2>
             </div>
         </div>
 
@@ -50,7 +51,7 @@ $result = $db->query($query);
                                         <td><?= $row['ptn'] ?></td>
                                         <td><?= $row['state'] ?></td>
                                         <td style="width: 190px">
-                                            <a class="btn btn-info btn-sm" href="info.php?id=<?= $row['id'] ?>" role="button" title="Подробная информация о клиенте">
+                                            <a class="btn btn-info btn-sm" data-toggle="confirmation" href="info.php?id=<?= $row['id'] ?>" role="button" title="Подробная информация о клиенте">
                                                 <i class="fa fa-user-secret"></i> Подробнее
                                             </a>
                                             <a class="btn btn-warning btn-sm" href="edit.php?id=<?= $row['id'] ?>" role="button" title="Редактировать информацию о клиенте">

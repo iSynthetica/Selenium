@@ -1,8 +1,3 @@
-<?php
-session_start();
-require_once('inc/db.php');
-require_once('inc/library.php');
-?>
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -65,7 +60,7 @@ require_once('inc/library.php');
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="start.php" title="Начать запись для подачи документов">
+                            <a href="register.php?ppva=12" title="Начать запись для подачи документов">
                                 <i class="fa fa-play" style="margin-right: 5px"></i>Начать запись
                             </a>
                         </li>

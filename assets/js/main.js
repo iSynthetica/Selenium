@@ -20,6 +20,7 @@
 
         /* -- Bootstrap -- */
 //        init_bootstrap_js();
+//        init_confirmation();
     });
 
     $(window).bind('load', function() {
@@ -254,6 +255,10 @@
        ======================== */
     function init_bootstrap_js() {
         $('[data-toggle="tooltip"]').tooltip();
+    }
+
+    function init_confirmation() {
+        $('[data-toggle="confirmation"]').confirmation({popout: true});
     }
 
 })(jQuery);

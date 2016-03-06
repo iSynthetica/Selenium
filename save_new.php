@@ -1,7 +1,5 @@
 <?php
-session_start();
-require_once('inc/db.php');
-require_once('inc/library.php');
+require_once "inc/initial.php";
 
 if ($_POST) {
     $client_data = array();

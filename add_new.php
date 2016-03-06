@@ -1,4 +1,6 @@
 <?php
+require_once "inc/initial.php";
+
 $meta_title = "Добавление нового клиента";
 require_once "header.php";
 ?>
