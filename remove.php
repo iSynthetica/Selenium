@@ -1,4 +1,5 @@
 <?php
+require_once "inc/not_login.php";
 require_once "inc/initial.php";
 
 if ($_GET['id']) {

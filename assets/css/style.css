@@ -317,6 +317,9 @@ dd {
 .navbar {
     margin-bottom: 0;
 }
+.navbar-nav {
+    float: none;
+}
 .navbar-default {
     border: none;
     border-bottom: 2px solid #C93323;
@@ -432,6 +435,16 @@ dd {
         color: #888;
         background-color: #f4f8df;
     }
+}
+
+#login_info {
+    float: right;
+}
+#login_info a {
+    display: inline-block;
+}
+#login_info .btn {
+    padding: 5px 8px;
 }
 
 /*-----------------------------------------------------------------------------------*/

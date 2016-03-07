@@ -84,6 +84,11 @@
                         <li class="menu-item">
                             <a href="#" title="Фотогалерея">Фотогалерея</a>
                         </li>
+
+                        <li id="login_info" class="menu-item">
+                            <a href="#" disabled="disabled"><i class="fa fa-user"></i> <?= $_SESSION['user']['name'] ?> (<?= $_SESSION['user']['id'] ?>)</a>
+                            <a class="btn btn-default" href="logout.php" role="button" title="Выйти"><i class="fa fa-sign-out"></i></a>
+                        </li>
                     </ul>
                 </div>
             </div><!-- .row -->

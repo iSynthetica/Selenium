@@ -1,4 +1,5 @@
 <?php
+require_once "inc/not_login.php";
 require('bootstrap.php');
 
 use Nearsoft\SeleniumClient\By;
