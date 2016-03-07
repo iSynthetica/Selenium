@@ -16,6 +16,9 @@ if ($_POST) {
     $client_data['passport_num'] = $_POST['customer_passport'];
     $client_data['passport_expire'] = $_POST['customer_passport_expire'];
     $client_data['back_date'] = $_POST['customer_return'];
+    $client_data['reg_date_from'] = $_POST['customer_reg_date_from'];
+    $client_data['reg_date_to'] = $_POST['customer_reg_date_to'];
+    $client_data['additional_info'] = $_POST['customer_additional_info'];
     $client_data['nationality'] = $_POST['customer_nationality'];
     $client_data['state_id'] = 1;
     $client_data['created'] = date('Y-m-d H:i:s');

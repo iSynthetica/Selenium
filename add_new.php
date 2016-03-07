@@ -220,6 +220,43 @@ require_once "header.php";
                     </div>
 
                     <div class="row">
+                        <div class="col-sm-6">
+                            <h3 class="text-center">Желаемая дата подачи документов</h3>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="customer_reg_date_from">Дата с</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-sngl-datepicker" id="customer_reg_date_from" name="customer_reg_date_from" placeholder="">
+                                            <span class="input-group-addon" id="basic-addon2">
+                                                <i class="fa fa-calendar"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="customer_reg_date_to">Дата до</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-sngl-datepicker" id="customer_reg_date_to" name="customer_reg_date_to" placeholder="">
+                                            <span class="input-group-addon" id="basic-addon2">
+                                                <i class="fa fa-calendar"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="customer_additional_info">Дополнительная информация</label>
+                                <textarea id="customer_additional_info" class="form-control" rows="3" name="customer_additional_info"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-sm-4 col-sm-offset-4">
                             <div class="form-group" style="padding-top: 25px">
                                 <button type="submit" class="btn btn-block btn-lg btn-success"><i class="glyphicon glyphicon-floppy-saved"></i> Сохранить данные</button>
