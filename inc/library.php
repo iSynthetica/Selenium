@@ -349,4 +349,10 @@ function display_notification() {
         unset ($_SESSION['notification']);
     }
 }
+
+function get_avatar($status) {
+    if () {
+
+    }
+}
 ?>
