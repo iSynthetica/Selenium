@@ -14,6 +14,7 @@ if ($_POST['agent_login'] && $_POST['agent_password']) {
         $row = $result->fetch_assoc();
 
         $_SESSION['user']['name'] = $row['name'];
+        $_SESSION['user']['status'] = $row['status'];
         $_SESSION['user']['id'] = $row['id'];
 
         header('Location: http://' . get_base_url());

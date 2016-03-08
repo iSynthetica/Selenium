@@ -5,11 +5,20 @@ require_once "header.php";
 
 //var_dump($db);
 
+$where = "";
+
+if ('admin' != $_SESSION['user']['status']) {
+    $where = " WHERE agent_id = " . $_SESSION['user']['id'];
+}
+
 $query = "SELECT c.*, s.state FROM pol_clients AS c "
-        ."JOIN pol_state AS s ON c.state_id = s.id";
+        ."JOIN pol_state AS s ON c.state_id = s.id" . $where;
 
 $result = $db->query($query);
 ?>
+
+<?php var_dump($_SESSION['user']) ?>
+
 <section class="section-lg bg-light">
     <div class="container">
 
@@ -38,6 +47,13 @@ $result = $db->query($query);
                                     <th>Фамилия</th>
                                     <th>PTN</th>
                                     <th>Состояние заявки</th>
+                                    <?php
+                                    if ('admin' == $_SESSION['user']['status']) {
+                                        ?>
+                                        <th>Агент</th>
+                                        <?php
+                                    }
+                                    ?>
                                     <th>Упраление</th>
                                 </tr>
                             </thead>
@@ -51,6 +67,13 @@ $result = $db->query($query);
                                         <td><?= $row['surname'] ?></td>
                                         <td><?= $row['ptn'] ?></td>
                                         <td><?= $row['state'] ?></td>
+                                        <?php
+                                        if ('admin' == $_SESSION['user']['status']) {
+                                            ?>
+                                            <td><?= $row['agent_id'] ?></td>
+                                            <?php
+                                        }
+                                        ?>
                                         <td style="width: 190px">
                                             <a class="btn btn-info btn-sm" data-toggle="confirmation" href="info.php?id=<?= $row['id'] ?>" role="button" title="Подробная информация о клиенте">
                                                 <i class="fa fa-user-secret"></i> Подробнее

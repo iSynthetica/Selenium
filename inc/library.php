@@ -351,8 +351,12 @@ function display_notification() {
 }
 
 function get_avatar($status) {
-    if () {
-
+    if ('Mrs.' == $status || 'Ms.' == $status) {
+        $image = 'female.png';
+    } else {
+        $image = 'male.png';
     }
+
+    return '<img src="http://' . get_base_url() . '/assets/img/' . $image . '" alt="">';
 }
 ?>

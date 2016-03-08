@@ -45,7 +45,7 @@ require_once "header.php";
         <div class="row section-content">
             <div class="col-sm-3 text-center">
                 <div class="thumbnail">
-                    <img src="assets/img/female.png" alt="">
+                    <?= get_avatar($row['status']) ?>
                     <div class="caption text-center">
                         <h3><?= $row['name'] ?> <?= $row['surname'] ?></h3>
                     </div>
@@ -78,7 +78,7 @@ require_once "header.php";
                             <dt>Состояние заявки</dt>
                             <dd><?= $row['state'] ?></dd>
                             <dt>Даты подачи</dt>
-                            <dd><?= $row['reg_date_from'] ?><br><?= $row['reg_date_to'] ?></dd>
+                            <dd><?= $row['reg_date_from'] ?> - <?= $row['reg_date_to'] ?></dd>
                             <dt>ППВА</dt>
                             <dd><?= get_ppva_by_id($row['ppva']) ?></dd>
                             <dt>PTN</dt>
@@ -87,6 +87,12 @@ require_once "header.php";
                             <dd><?= $row['purpose'] ?></dd>
                             <dt>Дата возвращения</dt>
                             <dd><?= $row['back_date'] ?></dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-12">
+                        <dl class="dl-horizontal">
+                            <dt>Примечания</dt>
+                            <dd><?= $row['additional_info'] ?></dd>
                         </dl>
                     </div>
                 </div>
