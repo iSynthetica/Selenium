@@ -29,19 +29,12 @@ if ($_GET['id']) {
 }
 
 $meta_title = "Информация о клиенте";
+$page_title = "Подробная информация о клиенте с ID " . $id;
 require_once "header.php";
 ?>
 
-<section class="section-lg bg-light">
+<section class="section-lg bg-white">
     <div class="container">
-
-        <div class="row section-header">
-            <div class="col-sm-12 text-center">
-                <h1>Клиент с ID <?= $id ?></h1>
-                <h2 class="sub-header">подробная информация о клиенте</h2>
-            </div>
-        </div>
-
         <div class="row section-content">
             <div class="col-sm-3 text-center">
                 <div class="thumbnail">

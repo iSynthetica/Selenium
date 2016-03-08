@@ -96,14 +96,22 @@
     </nav>
     <!-- Main navigation menu - End -->
 
-    <header id="header" class="section-lg bg-light parallax bg-holder txt-light">
+    <header id="header" class="section-md bg-light parallax bg-holder txt-light">
         <div class="bg-parallax" style="background-image:url('/assets/img/poland.jpg')"></div>
         <div class="overlay bg-black bg-op-20"></div>
         <div class="container">
             <div class="row section-header">
                 <div class="col-sm-12 text-center">
-                    <h1>ПОДАТИ ЗАЯВУ НА ВІЗУ ДО ПОЛЬЩІ</h1>
-                    <h2 class="sub-header">ПРИЗНАЧЕННЯ ДАТИ ПОДАЧІ ДОКУМЕНТІВ</h2>
+                    <?php if ($page_title) {
+                        ?>
+                        <h1><?= $page_title ?></h1>
+                        <?php
+                    } else {
+                        ?>
+                        <h1>ПОДАТИ ЗАЯВУ НА ВІЗУ ДО ПОЛЬЩІ</h1>
+                        <?php
+                    }?>
+
                 </div>
             </div>
         </div>

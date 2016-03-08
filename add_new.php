@@ -3,14 +3,14 @@ require_once "inc/not_login.php";
 require_once "inc/initial.php";
 
 $meta_title = "Добавление нового клиента";
+$page_title = "Добавление нового клиента на запись в консульство Польши";
 require_once "header.php";
 ?>
 
-<section class="section-xl bg-light">
+<section class="section-md bg-light">
     <div class="container">
         <div class="row section-header">
             <div class="col-sm-12 text-center">
-                <h1>Добавить нового клиента</h1>
                 <h2 class="sub-header">Все поля формы обязательны для заполнения</h2>
             </div>
         </div>

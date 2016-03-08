@@ -30,16 +30,16 @@ if ($_GET['id']) {
 }
 
 $meta_title = "Редактировать нформацию о клиенте";
+$page_title = "Редактирование информации о клиенте с ID " . $id;
 require_once "header.php";
 ?>
 
-<section class="section-lg bg-light">
+<section class="section-md bg-light">
     <div class="container">
 
         <div class="row section-header">
             <div class="col-sm-12 text-center">
-                <h1>Клиент с ID <?= $id ?></h1>
-                <h2 class="sub-header">редактирование информации о клиенте</h2>
+                <h2 class="sub-header">заполниет необходимые поля формы и нажмите кнопку "Сохранить изменения"</h2>
             </div>
         </div>
 
