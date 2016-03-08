@@ -65,6 +65,31 @@ function get_ppva_by_id($id) {
 }
 
 /**
+ * @return array
+ */
+function get_client_status_array() {
+    $client_status = array(
+        "Dr." => "Dr.",
+        "Mr." => "Mr.",
+        "Mrs." => "Mrs.",
+        "Ms." => "Ms.",
+        "Mstr." => "Mstr.",
+    );
+     return $client_status;
+}
+
+/**
+ * @return array
+ */
+function get_purpose_array() {
+    $purpose = array(
+        1 => "Подача документів",
+        2 => "Консультація",
+    );
+     return $purpose;
+}
+
+/**
  * Get list of nationalities
  *
  * @return array

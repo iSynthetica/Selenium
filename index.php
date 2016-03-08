@@ -17,8 +17,6 @@ $query = "SELECT c.*, s.state FROM pol_clients AS c "
 $result = $db->query($query);
 ?>
 
-<?php var_dump($_SESSION['user']) ?>
-
 <section class="section-lg bg-light">
     <div class="container">
 
