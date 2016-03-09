@@ -11,19 +11,19 @@ require_once "header.php";
     <div class="container">
         <div class="row section-header">
             <div class="col-sm-12 text-center">
-                <h2 class="sub-header">Все поля формы обязательны для заполнения</h2>
+                <h2 class="sub-header">Все поля формы отмеченные "<span class="txt-red">*</span>" обязательны для заполнения</h2>
             </div>
         </div>
 
         <div class="row section-content">
-            <form action="save_new.php" method="post">
+            <form action="save_new.php" method="post" class="form-validated">
                 <div class="col-sm-12">
                     <div class="row">
                         <!-- Customer name - start -->
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label for="customer_name">Имя</label>
-                                <input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="Имя">
+                                <label for="customer_name">Имя <span class="txt-red">*</span></label>
+                                <input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="Имя" required>
                             </div>
                         </div>
                         <!-- Customer name - end -->
@@ -31,8 +31,8 @@ require_once "header.php";
                         <!-- Customer surname - start -->
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label for="customer_surname">Фамилия</label>
-                                <input type="text" class="form-control" id="customer_surname" name="customer_surname" placeholder="Фамилия">
+                                <label for="customer_surname">Фамилия <span class="txt-red">*</span></label>
+                                <input type="text" class="form-control" id="customer_surname" name="customer_surname" placeholder="Фамилия" required>
                             </div>
                         </div>
                         <!-- Customer surname - end -->
@@ -42,8 +42,8 @@ require_once "header.php";
                                 <!-- Customer status - start -->
                                 <div class="col-sm-3">
                                     <div class="form-group">
-                                        <label for="customer_status">Статус</label>
-                                        <select name="customer_status" id="customer_status" class="form-control">
+                                        <label for="customer_status">Статус <span class="txt-red">*</span></label>
+                                        <select name="customer_status" id="customer_status" class="form-control" required>
                                             <option value="">...</option>
                                             <option value="Dr.">Dr.</option>
                                             <option value="Mr.">Mr.</option>
@@ -60,9 +60,9 @@ require_once "header.php";
                                         <!-- Customer date of birth - start -->
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="customer_birth">Дата рождения</label>
+                                                <label for="customer_birth">Дата рождения <span class="txt-red">*</span></label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control form-sngl-datepicker" id="customer_birth" name="customer_birth" placeholder="Дата рождения">
+                                                    <input type="text" class="form-control form-sngl-datepicker" id="customer_birth" name="customer_birth" placeholder="Дата рождения" required>
                                                     <span class="input-group-addon" id="basic-addon2">
                                                         <i class="fa fa-calendar"></i>
                                                     </span>
@@ -74,8 +74,8 @@ require_once "header.php";
                                         <!-- Customer nationality - start -->
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="customer_nationality">Национальность</label>
-                                                <select name="customer_nationality" id="customer_nationality" class="form-control">
+                                                <label for="customer_nationality">Национальность <span class="txt-red">*</span></label>
+                                                <select name="customer_nationality" id="customer_nationality" class="form-control" required>
                                                     <option value="-1">- - -</option>
                                                     <?php
                                                     $nationality_options = get_nationality_array();
@@ -119,9 +119,9 @@ require_once "header.php";
                         <!-- Customer passport date expire - start -->
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label for="customer_passport_expire">Дата окончания паспорта</label>
+                                <label for="customer_passport_expire">Дата окончания паспорта <span class="txt-red">*</span></label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control form-sngl-datepicker" id="customer_passport_expire" name="customer_passport_expire" placeholder="Дата возвращения">
+                                    <input type="text" class="form-control form-sngl-datepicker" id="customer_passport_expire" name="customer_passport_expire" required>
                                     <span class="input-group-addon" id="basic-addon2">
                                         <i class="fa fa-calendar"></i>
                                     </span>
@@ -133,9 +133,9 @@ require_once "header.php";
                         <!-- Customer email - start -->
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label for="customer_email">Email</label>
+                                <label for="customer_email">Email <span class="txt-red">*</span></label>
                                 <div class="input-group">
-                                    <input type="email" class="form-control" id="customer_email" name="customer_email" placeholder="Email">
+                                    <input type="email" class="form-control" id="customer_email" name="customer_email" placeholder="Email" required>
                                     <span class="input-group-addon" id="basic-addon2">
                                         <i class="fa fa-envelope-o"></i>
                                     </span>
@@ -147,9 +147,9 @@ require_once "header.php";
                         <!-- Customer password - start -->
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label for="customer_pass">Пароль</label>
+                                <label for="customer_pass">Пароль <span class="txt-red">*</span></label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="customer_pass" name="customer_pass" placeholder="Пароль">
+                                    <input type="text" class="form-control" id="customer_pass" name="customer_pass" placeholder="Пароль" required>
                                     <span class="input-group-addon" id="basic-addon2">
                                         <i class="fa fa-unlock-alt"></i>
                                     </span>
@@ -162,8 +162,8 @@ require_once "header.php";
                     <div class="row">
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label for="customer_ppva">ППВА</label>
-                                <select name="customer_ppva" id="customer_ppva" class="form-control">
+                                <label for="customer_ppva">ППВА <span class="txt-red">*</span></label>
+                                <select name="customer_ppva" id="customer_ppva" class="form-control" required>
                                     <option value="-1">-Оберіть ППВА-</option>
                                     <?php
                                     $ppva_options = get_ppva_array();
@@ -186,8 +186,8 @@ require_once "header.php";
                         <!-- Purpose - start -->
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label for="customer_purpose">Цель визита</label>
-                                <select name="customer_purpose" id="customer_purpose" class="form-control">
+                                <label for="customer_purpose">Цель визита <span class="txt-red">*</span></label>
+                                <select name="customer_purpose" id="customer_purpose" class="form-control" required>
                                     <option value="-1">-Будь ласка, оберіть-</option>
                                     <option value="1" selected="selected">Подача документів</option>
                                     <option value="2">Консультація</option>
@@ -199,8 +199,8 @@ require_once "header.php";
                         <!-- PTN - start -->
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label for="customer_ptn">PTN</label>
-                                <input type="text" class="form-control form-mask-ptn" id="customer_ptn" name="customer_ptn" placeholder="PTN">
+                                <label for="customer_ptn">PTN <span class="txt-red">*</span></label>
+                                <input type="text" class="form-control form-mask-ptn" id="customer_ptn" name="customer_ptn" placeholder="PTN" required>
                             </div>
                         </div>
                         <!-- PTN - end -->
@@ -208,9 +208,9 @@ require_once "header.php";
                         <!-- Date return - start -->
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label for="customer_return">Дата возвращения</label>
+                                <label for="customer_return">Дата возвращения <span class="txt-red">*</span></label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control form-sngl-datepicker" id="customer_return" name="customer_return" placeholder="Дата возвращения">
+                                    <input type="text" class="form-control form-sngl-datepicker" id="customer_return" name="customer_return" required>
                                     <span class="input-group-addon" id="basic-addon2">
                                         <i class="fa fa-calendar"></i>
                                     </span>
@@ -226,9 +226,9 @@ require_once "header.php";
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="customer_reg_date_from">Дата с</label>
+                                        <label for="customer_reg_date_from">Дата с <span class="txt-red">*</span></label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control form-sngl-datepicker" id="customer_reg_date_from" name="customer_reg_date_from" placeholder="">
+                                            <input type="text" class="form-control form-sngl-datepicker" id="customer_reg_date_from" name="customer_reg_date_from" required>
                                             <span class="input-group-addon" id="basic-addon2">
                                                 <i class="fa fa-calendar"></i>
                                             </span>
@@ -237,9 +237,9 @@ require_once "header.php";
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="customer_reg_date_to">Дата до</label>
+                                        <label for="customer_reg_date_to">Дата до <span class="txt-red">*</span></label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control form-sngl-datepicker" id="customer_reg_date_to" name="customer_reg_date_to" placeholder="">
+                                            <input type="text" class="form-control form-sngl-datepicker" id="customer_reg_date_to" name="customer_reg_date_to" required>
                                             <span class="input-group-addon" id="basic-addon2">
                                                 <i class="fa fa-calendar"></i>
                                             </span>

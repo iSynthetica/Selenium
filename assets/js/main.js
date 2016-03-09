@@ -15,7 +15,7 @@
 //        init_number_input();
         init_input_mask();
 //        init_country_select();
-//        init_form_validation();
+        init_form_validation();
 //        init_scrolly();
 
         /* -- Bootstrap -- */

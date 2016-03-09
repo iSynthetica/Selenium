@@ -20,6 +20,16 @@ if ($_GET['id']) {
     }
 
     $row = $result->fetch_assoc();
+
+    $db->close();
+
+    if(($_SESSION['user']['id'] != $row['agent_id']) && ('admin' != $_SESSION['user']['status'])) {
+        $_SESSION['notification']['status'] = 'danger';
+        $_SESSION['notification']['title'] = 'Ошибка: ';
+        $_SESSION['notification']['message'] = 'У Вас нет прав просматривать информацию о данном клиенте';
+        header('Location: http://' . get_base_url());
+    }
+
 } else {
     $_SESSION['notification']['status'] = 'danger';
     $_SESSION['notification']['title'] = 'Ошибка: ';
@@ -87,6 +97,14 @@ require_once "header.php";
                             <dt>Примечания</dt>
                             <dd><?= $row['additional_info'] ?></dd>
                         </dl>
+                    </div>
+                    <div class="col-sm-12" style="padding-left: 190px">
+                        <a class="btn btn-warning btn-sm" href="edit.php?id=<?= $row['id'] ?>" role="button" title="Редактировать информацию о клиенте">
+                            <i class="fa fa-pencil"></i> Редактировать информацию
+                        </a>
+                        <a class="btn btn-danger btn-sm" href="remove.php?id=<?= $row['id'] ?>" role="button" title="Удалить запись клиента">
+                            <i class="fa fa-remove"></i> Удалить клиента
+                        </a>
                     </div>
                 </div>
             </div>

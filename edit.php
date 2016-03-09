@@ -21,11 +21,17 @@ if ($_GET['id']) {
 
     $row = $result->fetch_assoc();
 
+    if(($_SESSION['user']['id'] != $row['agent_id']) && ('admin' != $_SESSION['user']['status'])) {
+        $_SESSION['notification']['status'] = 'danger';
+        $_SESSION['notification']['title'] = 'Ошибка: ';
+        $_SESSION['notification']['message'] = 'У Вас нет прав вносить изменения в информацию о данном клиенте';
+        header('Location: http://' . get_base_url());
+    }
+
 } else {
     $_SESSION['notification']['status'] = 'danger';
     $_SESSION['notification']['title'] = 'Ошибка: ';
     $_SESSION['notification']['message'] = 'Вы не выбрали клиента для просмотра информации';
-
     header('Location: http://' . get_base_url());
 }
 

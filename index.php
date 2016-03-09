@@ -11,13 +11,16 @@ if ('admin' != $_SESSION['user']['status']) {
     $where = " WHERE agent_id = " . $_SESSION['user']['id'];
 }
 
-$query = "SELECT c.*, s.state FROM pol_clients AS c "
-        ."JOIN pol_state AS s ON c.state_id = s.id" . $where;
+$query = "SELECT c.*, s.state, a.name AS agent FROM pol_clients AS c "
+        ."JOIN pol_state AS s ON c.state_id = s.id "
+        ."JOIN pol_agents AS a ON c.agent_id = a.id "
+        . $where
+        . " ORDER BY state_id, id";
 
 $result = $db->query($query);
 ?>
 
-<section class="section-lg bg-light">
+<section class="section-lg bg-white">
     <div class="container">
 
         <?php
@@ -52,7 +55,7 @@ $result = $db->query($query);
                                         <?php
                                     }
                                     ?>
-                                    <th>Упраление</th>
+                                    <th>Управление</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -68,7 +71,7 @@ $result = $db->query($query);
                                         <?php
                                         if ('admin' == $_SESSION['user']['status']) {
                                             ?>
-                                            <td><?= $row['agent_id'] ?></td>
+                                            <td><?= $row['agent'] ?></td>
                                             <?php
                                         }
                                         ?>
@@ -86,6 +89,7 @@ $result = $db->query($query);
                                     </tr>
                                     <?php
                                 }
+                                $db->close();
                                 ?>
                             </tbody>
                         </table>
