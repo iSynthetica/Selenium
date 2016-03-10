@@ -138,6 +138,8 @@ require_once "header.php";
 
                         <?php
                     }
+
+                    $db->close();
                     ?>
                 </div><!-- col-sm-10 -->
             </div>

@@ -21,6 +21,8 @@ if ($_GET['id']) {
 
     $row = $result->fetch_assoc();
 
+    $db->close();
+
     if(($_SESSION['user']['id'] != $row['agent_id']) && ('admin' != $_SESSION['user']['status'])) {
         $_SESSION['notification']['status'] = 'danger';
         $_SESSION['notification']['title'] = 'Ошибка: ';
