@@ -81,7 +81,7 @@ require_once "header.php";
                             <dt>Состояние заявки</dt>
                             <dd><?= $row['state'] ?></dd>
                             <dt>Даты подачи</dt>
-                            <dd><?= $row['reg_date_from'] ?> - <?= $row['reg_date_to'] ?></dd>
+                            <dd><?= convert_timastamp_to_date($row['reg_date_from']) ?> - <?= convert_timastamp_to_date($row['reg_date_to']) ?></dd>
                             <dt>ППВА</dt>
                             <dd><?= get_ppva_by_id($row['ppva']) ?></dd>
                             <dt>PTN</dt>

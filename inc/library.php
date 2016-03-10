@@ -384,4 +384,23 @@ function get_avatar($status) {
 
     return '<img src="http://' . get_base_url() . '/assets/img/' . $image . '" alt="">';
 }
+
+function convert_date_to_timestamp($date) {
+    $date_to_convert = DateTime::createFromFormat("d-m-Y", $date);
+    $timestamp = $date_to_convert->getTimestamp();
+
+    return $timestamp;
+}
+
+function convert_timastamp_to_date($timestamp) {
+    $date = date("d-m-Y", $timestamp);
+
+    return $date;
+}
+
+function convert_timastamp_to_date_slash($timestamp) {
+    $date = date("d/m/Y", $timestamp);
+
+    return $date;
+}
 ?>

@@ -17,8 +17,8 @@ if ($_POST) {
     $client_data['passport_num'] = $_POST['customer_passport'];
     $client_data['passport_expire'] = str_replace('-', '/', $_POST['customer_passport_expire']);
     $client_data['back_date'] = str_replace('-', '/', $_POST['customer_return']);
-    $client_data['reg_date_from'] = str_replace('-', '/', $_POST['customer_reg_date_from']);
-    $client_data['reg_date_to'] = str_replace('-', '/', $_POST['customer_reg_date_to']);
+    $client_data['reg_date_from'] = convert_date_to_timestamp($_POST['customer_reg_date_from']);
+    $client_data['reg_date_to'] = convert_date_to_timestamp($_POST['customer_reg_date_to']);
     $client_data['additional_info'] = $_POST['customer_additional_info'];
     $client_data['nationality'] = $_POST['customer_nationality'];
     $client_data['agent_id'] = $_SESSION['user']['id'];

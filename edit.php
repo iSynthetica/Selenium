@@ -285,7 +285,7 @@ require_once "header.php";
                                     <div class="form-group">
                                         <label for="customer_reg_date_from">Дата с</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control form-sngl-datepicker" id="customer_reg_date_from" name="customer_reg_date_from" value="<?= $row['reg_date_from'] ?>">
+                                            <input type="text" class="form-control form-sngl-datepicker" id="customer_reg_date_from" name="customer_reg_date_from" value="<?= convert_timastamp_to_date($row['reg_date_from']) ?>">
                                             <span class="input-group-addon" id="basic-addon2">
                                                 <i class="fa fa-calendar"></i>
                                             </span>
@@ -296,7 +296,7 @@ require_once "header.php";
                                     <div class="form-group">
                                         <label for="customer_reg_date_to">Дата до</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control form-sngl-datepicker" id="customer_reg_date_to" name="customer_reg_date_to" value="<?= $row['reg_date_to'] ?>">
+                                            <input type="text" class="form-control form-sngl-datepicker" id="customer_reg_date_to" name="customer_reg_date_to" value="<?= convert_timastamp_to_date($row['reg_date_to']) ?>">
                                             <span class="input-group-addon" id="basic-addon2">
                                                 <i class="fa fa-calendar"></i>
                                             </span>
