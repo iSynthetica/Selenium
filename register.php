@@ -56,7 +56,7 @@ require_once "header.php";
             <div class="row section-content">
                 <div class="col-sm-2 bg-light" style="margin-top: 40px">
                     <h4 class="text-center" style="font-weight: 300">Начните запись всех клиентов</h4>
-                    <a class="btn btn-info btn-block" href="start.php" role="button" title="Начать запись клиента <?= $row['name'] . " " . $row['surname'] ?>">
+                    <a class="btn btn-info btn-block" href="start.php?ppva=<?= $ppva ?>" role="button" title="Начать запись клиента <?= $row['name'] . " " . $row['surname'] ?>">
                         <i class="fa fa-play"></i> Старт
                     </a>
                     <h4 class="text-center" style="font-weight: 300; margin-top: 25px">Выберите другой ППВА</h4>
@@ -139,7 +139,7 @@ require_once "header.php";
                         <?php
                     }
 
-                    $db->close();
+                    //$db->close();
                     ?>
                 </div><!-- col-sm-10 -->
             </div>
