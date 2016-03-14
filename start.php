@@ -1,4 +1,6 @@
 <?php
+// before start run next command:
+// java -jar selenium-server-standalone-2.51.0.jar
 require_once "inc/not_login.php";
 require('bootstrap.php');
 
@@ -61,31 +63,41 @@ $webElement->click(); // Кликаем по ссылке
 
 while($row = $result->fetch_assoc()) {
 
-    $selectElement = new SelectElement($webDriver->findElement(By::id("ctl00_plhMain_cboVAC")));
+    $selectElement = new SelectElement($webDriver->waitForElementUntilIsPresent(By::id("ctl00_plhMain_cboVAC")));
     $selectElement->selectByValue($row['ppva']);
 
-    $selectElement = new SelectElement($webDriver->findElement(By::id("ctl00_plhMain_cboPurpose")));
+    $selectElement = new SelectElement($webDriver->waitForElementUntilIsPresent(By::id("ctl00_plhMain_cboPurpose")));
     $selectElement->selectByValue("1");
 
-    $webElement = $webDriver->findElement(By::id("ctl00_plhMain_btnSubmit"));
+    $webElement = $webDriver->waitForElementUntilIsPresent(By::id("ctl00_plhMain_btnSubmit"));
     $webElement->click();
 
     try {
-        $selectElement = new SelectElement($webDriver->findElement(By::id("ctl00_plhMain_cboVisaCategory")));
+        $selectElement = new SelectElement($webDriver->waitForElementUntilIsPresent(By::id("ctl00_plhMain_cboVisaCategory")));
         $selectElement->selectByValue("235");
     } catch (Exception $e) {
-        die('Failed');
+        die('Failed 01');
     }
 
-    $msgElement = $webDriver->waitForElementUntilIsPresent(By::id("ctl00_plhMain_lblMsg"));
-    $msgText = $msgElement->getText();
+    try {
+        $msgElement = $webDriver->waitForElementUntilIsPresent(By::id("ctl00_plhMain_lblMsg"));
+        $msgText = $msgElement->getText();
 
-    if(false === strpos('No date(s) available', $msgText) ) {
-        die('No date(s) available');
-    } else {
-        die($msgText);
+        if(false === strpos('No date(s) available', $msgText) ) {
+            die($msgText);
+        } else {
+            die('No date(s) available');
+        }
+    } catch (Exception $e) {
+        die('Failed 02');
     }
 
     //$webDriver->navigate()->refresh();
-
 }
+
+$meta_title = "Результаты записи";
+$page_title = "Результаты записи в консульство";
+require_once "header.php";
+
+require_once "footer.php";
+?>

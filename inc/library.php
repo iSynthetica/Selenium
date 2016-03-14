@@ -403,4 +403,8 @@ function convert_timastamp_to_date_slash($timestamp) {
 
     return $date;
 }
+
+function get_agents_by_id () {
+
+}
 ?>
